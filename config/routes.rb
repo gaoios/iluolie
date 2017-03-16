@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  root 'topics#index'
   resources :topics
+  root 'topics#index'
   resources :articles
   get 'welcome/index'
   get 'articles/new'
