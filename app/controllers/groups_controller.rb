@@ -16,6 +16,7 @@ class GroupsController < ApplicationController
       redirect_to groups_path, notice: "Update Success"
     else
       render :edit
+    end
   end
 
   def destroy
@@ -31,16 +32,16 @@ class GroupsController < ApplicationController
 
   def create
     @group = Group.new(group_params)
-    # @group.save
+
     if @group.save
       redirect_to groups_path
     else
       render :new
-    # redirect_to groups_path
+    end
   end
 
   private
     def group_params
       params.require(:group).permit(:title,:description)
     end
-end
+  end
