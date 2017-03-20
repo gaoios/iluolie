@@ -8,6 +8,12 @@ Rails.application.routes.draw do
     end
     resources :posts
   end
+
+  namespace :account do
+    resources :groups
+    resources :posts
+  end
+
   # root 'topics#index'
   resources :articles
   # root 'welcome#index'
